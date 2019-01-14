@@ -17,7 +17,7 @@ services:
         constraints: [node.role == manager]
 
   braviapp:
-    image: teste-arquiteto-bravi:v2.0.1.RELEASE.local
+    image: current-version
     ports:
     - 8090:8090
     networks:
