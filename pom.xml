@@ -7,9 +7,9 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.1.RELEASE</version>
 	</parent>
-	<artifactId>spring-boot-sample-hateoas</artifactId>
-	<name>Spring Boot Hateoas Sample</name>
-	<description>Spring Boot Hateoas Sample</description>
+	<artifactId>teste-arquiteto-bravi</artifactId>
+	<name>Teste arquiteto bravi</name>
+	<description>Teste para arquiteto da Bravi</description>
 	<properties>
 		<springfox.version>2.7.0</springfox.version>
 	</properties>
@@ -38,6 +38,11 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
