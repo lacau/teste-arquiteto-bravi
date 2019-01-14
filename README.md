@@ -31,6 +31,13 @@ You may need to set scripts permission to be **executable**, it can be done by:
 2. Run ``chmod +x create-local-swarm-cluster.sh``
 3. Run ``chmod +x run-local-docker.sh``
 
+# Deploying new application version without downtime
+1. Just keep a good git flow pattern of course. (feature/bugfix/release branchs).
+2. Add necessary changes, new features, etc.
+3. Bump application version inside pom.xml
+4. Run ``./build-local-docker.sh`` - it will create new docker image with properly tag for deploy.
+5. Run ``./run-local-docker.sh`` - it will update swarm containers with the new version.
+
 # Monitoring swarm cluster and access swagger docs
 
 Open your browser and go to *http://localhost:8000/* for swarm cluster monitoring
