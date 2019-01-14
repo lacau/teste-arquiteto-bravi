@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+
+  db:
+    image: postgres:9.4
+    volumes:
+    - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: customerdb
+    networks:
+    - bravi
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  braviapp:
+    image: teste-arquiteto-bravi:v2.0.1.RELEASE.local
+    ports:
+    - 8090:8090
+    networks:
+    - bravi
+    depends_on:
+    - db
+    deploy:
+      mode: replicated
+      replicas: 2
+      labels: [APP=TEST-BRAVI]
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  bravi:
+
+volumes:
+  db-data:
