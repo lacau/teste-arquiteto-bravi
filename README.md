@@ -39,6 +39,6 @@ Open your browser and go to *http://localhost:8090/swagger-ui.html* to access sw
 
 # Troubleshooting
 
-1. You may need to access 127.0.0.1 instead of localhost
+1. You may need to access 127.0.0.1 instead of localhost depending on your loopback config
 2. If you have **more than one** network intefaces, docker deamon **can't** automaticaly choose it on swarm init, so you should:
   - Open create-local-swarm-cluster.sh file and **add** "--advertise-addr \<ip address\>" to **"docker swarm init"** command on **line 7**
